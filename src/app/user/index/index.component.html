@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Angular CRUD Example</h1>
+
+    <a href="#" routerLink="/user/create/" class="btn btn-success">Create New User</a>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th width="220px">Action</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+                <a href="#" [routerLink]="['/user/', user.id, 'view']"><i class="bi-eye"></i></a>|
+                <a href="#" [routerLink]="['/user/', user.id, 'edit']"><i class="bi-journal-code"></i></a>|
+                <a href="#" [routerLink]="" (click)="deletePost(user.id)"><i class="bi-trash"></i></a>
+            </td>
+        </tr>
+    </table>
+</div>
