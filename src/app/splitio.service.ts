@@ -35,7 +35,7 @@ export class SplitIoService {
     initSdk(): void {
         this.splitio = SplitFactory({
             core: {
-                authorizationKey: 'q9uhcsv9rm5468lr3g0ccj46dcuen2kgeald',
+                authorizationKey: '<your api key>',
                 key: 'customer-key'
             }
         });
