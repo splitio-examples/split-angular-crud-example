@@ -8,6 +8,8 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
    
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { SplitIoService } from '../splitio.service';
    
 @NgModule({
   declarations: [IndexComponent, ViewComponent, CreateComponent, EditComponent],
@@ -15,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     UserRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
+  providers: [SplitIoService]
 })
 export class UserModule { }

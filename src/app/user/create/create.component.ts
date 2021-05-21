@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { SplitIoService } from '../../splitio.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
     
@@ -14,13 +15,16 @@ export class CreateComponent implements OnInit {
     
   constructor(
     public userService: UserService,
+    public splitService: SplitIoService,
     private router: Router
   ) { }
    
   ngOnInit(): void {
+    // this.splitService.initSdk();
     this.form = new FormGroup({
       name: new FormControl('', [Validators.required]),
-      email: new FormControl('', Validators.required)
+      email: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required)
     });
   }
     

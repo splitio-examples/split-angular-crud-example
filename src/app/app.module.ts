@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserModule } from './user/user.module';
+
+import { SplitIoService } from './splitio.service';
    
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { UserModule } from './user/user.module';
     UserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SplitIoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user';
+import { SplitIoService } from '../../splitio.service';
    
 @Component({
   selector: 'app-index',
@@ -11,12 +12,15 @@ export class IndexComponent implements OnInit {
     
   users: User[] = [];
    
-  constructor(public userService: UserService) { }
+  constructor(
+    public userService: UserService,
+    public splitService: SplitIoService
+  ) { }
    
   ngOnInit(): void {
+    this.splitService.initSdk();
     this.userService.getAll().subscribe((data: User[])=>{
       this.users = data;
-      console.log(this.users);
     })  
   }
    
